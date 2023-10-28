@@ -1,0 +1,39 @@
+#TASK
+#TO-DO LIST
+tasks = []
+
+
+def add_task():
+    task = input("Enter the task: ")
+    tasks.append(task)
+    print(f'Task "{task}" added.')
+def view_tasks():
+    if tasks:
+        print("Tasks:")
+        for i, task in enumerate(tasks, 1):
+            print(f"{i}. {task}")
+    else:
+        print("No tasks to display.")
+
+
+def remove_task():
+    view_tasks()
+    if tasks:
+        try:
+            task_number = int(input("Enter the task number to remove: ")) - 1
+            removed_task = tasks.pop(task_number)
+            print(f'Task "{removed_task}" removed.')
+        except (ValueError, IndexError):
+            print("Invalid input. Please enter a valid task number.")
+    else:
+        print("No tasks to remove.")
+while True:
+    print("\nMenu:")
+    print("1. Add Task")
+    print("2. View Tasks")
+    print("3. Remove Task")
+    print("4. Quit")
+
+
+
+
